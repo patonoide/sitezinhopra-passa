@@ -3,7 +3,7 @@
 <%@page import="dao.CategoriaDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-CategoriaDAO cDAO = new CategoriaDAO();
+    CategoriaDAO cDAO = new CategoriaDAO();
     List<Categoria> cLista = cDAO.listar();
     %>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
@@ -17,7 +17,7 @@ CategoriaDAO cDAO = new CategoriaDAO();
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="Long" disabled required  name="txtFilme" />
+                        <input class="mdl-textfield__input"  disabled required  name="txtFilme" />
                         <label class="mdl-textfield__label" for="txtFilme">ID - Fornecido pelo sistema</label>
                     </div>
                 </div>

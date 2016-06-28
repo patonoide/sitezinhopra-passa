@@ -2,9 +2,9 @@
 <%@page import="dao.SerieDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-    String serie = request.getParameter("serie");
+    String serie = request.getParameter("id");
     SerieDAO dao = new SerieDAO();
-    Serie obj = dao.buscarPorChavePrimaria(Long.parseLong(serie));
+    Serie obj = dao.buscarPorChavePrimaria(Integer.parseInt(serie));
     dao.excluir(obj);
 %>
 

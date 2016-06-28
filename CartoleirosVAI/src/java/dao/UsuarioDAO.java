@@ -19,16 +19,13 @@ public class UsuarioDAO {
         em = emf.createEntityManager();
     }
     
-    public void incluir(Usuario obj) throws Exception {
+    public void incluir(Usuario obj)  {
         try {
             em.getTransaction().begin();
             em.persist(obj);
             em.getTransaction().commit();
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
-            throw e;
-        } finally {
-            //em.close();
             
         }
         
@@ -47,9 +44,7 @@ public class UsuarioDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            // em.close();
-        }
+        } 
     }
     
     public void excluir(Usuario obj) throws Exception {
@@ -60,11 +55,9 @@ public class UsuarioDAO {
             em.getTransaction().commit();
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
-        } finally {
-            //em.close();
-        }
+        } 
     }
-     public Usuario buscarPorChavePrimaria(Long usuario){
+     public Usuario buscarPorChavePrimaria(Integer usuario){
         return em.find(Usuario.class, usuario);
     
 }

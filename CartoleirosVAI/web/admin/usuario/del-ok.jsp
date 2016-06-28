@@ -2,9 +2,9 @@
 <%@page import="dao.UsuarioDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-    String usuario = request.getParameter("usuario");
+    String usuario = request.getParameter("id");
     UsuarioDAO dao = new UsuarioDAO();
-    Usuario obj = dao.buscarPorChavePrimaria(Long.parseLong(usuario));
+    Usuario obj = dao.buscarPorChavePrimaria(Integer.parseInt(usuario));
     dao.excluir(obj);
 %>
 

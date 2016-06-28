@@ -1,14 +1,15 @@
+<%@page import="modelo.Categoria"%>
 <%@page import="modelo.Filme"%>
 <%@page import="dao.FilmeDAO"%>
-<%@include file="../../cabecalho-admin.jsp"%>
+<%@include file="../cabecalho-admin.jsp"%>
 <%
-    if (request.getParameter("Filme") == null
+    if (request.getParameter("id") == null
             || request.getParameter("txtNome") == null) {
         response.sendRedirect("list.jsp");
         return;
     }
     
-    String filme = request.getParameter("txtFilme");
+    String filme = request.getParameter("id");
     String nome = request.getParameter("txtNome");
         String desc = request.getParameter("txtDescricao");
         String nota = request.getParameter("txtNota");
@@ -16,10 +17,10 @@
         String imdb = request.getParameter("txtImdb");
         String tempo= request.getParameter("txtTempo");
         
-        String cat=request.getParameter("txtCategoria");
-        SerieDAO dao = new SerieDAO();
+        String cat=request.getParameter("selCategoria");
+        FilmeDAO dao = new FilmeDAO();
         
-        Serie obj = dao.buscarPorChavePrimaria(Long.parseLong(filme));
+        Filme obj = dao.buscarPorChavePrimaria(Integer.parseInt(filme));
         //obj.setId(Integer.parseInt(id));
         
         
@@ -31,13 +32,13 @@
         return;
     }
 Categoria Ocategoria = new Categoria();
-        Ocategoria.setCategoria(Long.parseLong(cat));
+        Ocategoria.setCategoria(Integer.parseInt(cat));
         
        
         obj.setCategoria(Ocategoria);
-    obj.setSerie(Long.parseLong(filme));
+    
    obj.setNome(nome);
-        obj.setCategoria(cat);
+        
         obj.setDescricao(desc);
       
         obj.setImdb(imdb);
@@ -61,5 +62,5 @@ Categoria Ocategoria = new Categoria();
 
 </section>
 
-<%@include file="../../rodape-admin.jsp"%>
+<%@include file="../rodape-admin.jsp"%>
 

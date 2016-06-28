@@ -3,23 +3,30 @@
 <%@include file="../cabecalho-admin.jsp"%>
 <%
     if (request.getParameter("id") == null
-            || request.getParameter("txtNome") == null) {
+            ){
         response.sendRedirect("list.jsp");
         return;
     }
     
     String id = request.getParameter("id");
-    String nome = request.getParameter("txtNome");
-    
-    CategoriaDAO dao = new CategoriaDAO();
-    Categoria obj = dao.buscarPorChavePrimaria(Integer.parseInt(id));
+   
+    String senha = request.getParameter("txtSenha");
+    String login = request.getParameter("txtLogin");
+    String email = request.getParameter("txtEmail");
+    String foto = request.getParameter("txtFoto");
+    UsuarioDAO dao = new UsuarioDAO();
+    Usuario obj = dao.buscarPorChavePrimaria(Integer.parseInt(id));
     
     if(obj==null){
         response.sendRedirect("list.jsp");
         return;
     }
-    obj.setId(Integer.parseInt(id));
-    obj.setNome(nome);
+    
+    obj.setLogin(login);
+    obj.setSenha(senha);
+    obj.setFoto(foto);
+    obj.setEmail(email);
+    
     dao.alterar(obj);
 %>
 

@@ -2,23 +2,23 @@
 <%@page import="dao.CategoriaDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-    if (request.getParameter("categoria") == null
+    if (request.getParameter("txtId") == null
             || request.getParameter("txtNome") == null) {
         response.sendRedirect("list.jsp");
         return;
     }
     
-    String categoria = request.getParameter("txtCategoria");
+    String categoria = request.getParameter("txtId");
     String nome = request.getParameter("txtNome");
     
     CategoriaDAO dao = new CategoriaDAO();
-    Categoria obj = dao.buscarPorChavePrimaria(Long.parseLong(categoria));
+    Categoria obj = dao.buscarPorChavePrimaria(Integer.parseInt(categoria));
     
     if(obj==null){
         response.sendRedirect("list.jsp");
         return;
     }
-    obj.setCategoria(Long.parseLong(categoria));
+    
     obj.setNome(nome);
     
     dao.alterar(obj);

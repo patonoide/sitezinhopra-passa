@@ -11,7 +11,7 @@
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="Long" disabled required  name="txtUsuario" />
+                        <input class="mdl-textfield__input"  disabled required  name="txtUsuario" />
                         <label class="mdl-textfield__label" for="txtUsuario">ID - Fornecido pelo sistema</label>
                     </div>
                 </div>

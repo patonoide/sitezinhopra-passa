@@ -6,10 +6,12 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,19 +23,19 @@ import javax.persistence.Table;
 
 /**
  *
- * @author vinic
+ * @author paton
  */
 @Entity
 @Table(name = "serie")
 @NamedQueries({
     @NamedQuery(name = "Serie.findAll", query = "SELECT s FROM Serie s")})
 public class Serie implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "serie")
-    private Long serie;
+    private Integer serie;
     @Basic(optional = false)
     @Column(name = "temporada")
     private String temporada;
@@ -62,7 +64,7 @@ public class Serie implements Serializable {
         @JoinColumn(name = "serie", referencedColumnName = "serie")}, inverseJoinColumns = {
         @JoinColumn(name = "usuario", referencedColumnName = "usuario")})
     @ManyToMany
-    private List<Usuario> usuarioList;
+    private Collection<Usuario> usuarioCollection;
     @JoinColumn(name = "categoria", referencedColumnName = "categoria")
     @ManyToOne(optional = false)
     private Categoria categoria;
@@ -70,11 +72,11 @@ public class Serie implements Serializable {
     public Serie() {
     }
 
-    public Serie(Long serie) {
+    public Serie(Integer serie) {
         this.serie = serie;
     }
 
-    public Serie(Long serie, String temporada, String nome, String tempo, String descricao, Character nota, String youtube, String episodio, String imdb) {
+    public Serie(Integer serie, String temporada, String nome, String tempo, String descricao, Character nota, String youtube, String episodio, String imdb) {
         this.serie = serie;
         this.temporada = temporada;
         this.nome = nome;
@@ -86,11 +88,11 @@ public class Serie implements Serializable {
         this.imdb = imdb;
     }
 
-    public Long getSerie() {
+    public Integer getSerie() {
         return serie;
     }
 
-    public void setSerie(Long serie) {
+    public void setSerie(Integer serie) {
         this.serie = serie;
     }
 
@@ -158,12 +160,12 @@ public class Serie implements Serializable {
         this.imdb = imdb;
     }
 
-    public List<Usuario> getUsuarioList() {
-        return usuarioList;
+    public Collection<Usuario> getUsuarioCollection() {
+        return usuarioCollection;
     }
 
-    public void setUsuarioList(List<Usuario> usuarioList) {
-        this.usuarioList = usuarioList;
+    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
+        this.usuarioCollection = usuarioCollection;
     }
 
     public Categoria getCategoria() {

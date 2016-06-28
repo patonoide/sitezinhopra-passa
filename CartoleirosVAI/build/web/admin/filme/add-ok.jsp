@@ -17,10 +17,10 @@
         String imdb = request.getParameter("txtImdb");
         String tempo= request.getParameter("txtTempo");
         Filme obj = new Filme();
-        String cat=request.getParameter("txtCategoria");
+        String cat=request.getParameter("selCategoria");
         FilmeDAO dao = new FilmeDAO();
          Categoria Ocategoria = new Categoria();
-        Ocategoria.setCategoria(Long.parseLong(cat));
+        Ocategoria.setCategoria(Integer.parseInt(cat));
         
        
         obj.setCategoria(Ocategoria);

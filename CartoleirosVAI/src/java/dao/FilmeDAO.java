@@ -27,11 +27,7 @@ public class FilmeDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            //em.close();
-            
-        }
-        
+        } 
     }
 
     public List<Filme> listar() throws Exception {
@@ -47,9 +43,7 @@ public class FilmeDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            // em.close();
-        }
+        } 
     }
     
     public void excluir(Filme obj) throws Exception {
@@ -60,11 +54,9 @@ public class FilmeDAO {
             em.getTransaction().commit();
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
-        } finally {
-            //em.close();
         }
     }
-     public Filme buscarPorChavePrimaria(Long Filme){
+     public Filme buscarPorChavePrimaria(Integer Filme){
         return em.find(Filme.class, Filme);
     
 }

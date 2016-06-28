@@ -1,11 +1,18 @@
+<%@page import="java.util.List"%>
+<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.Categoria"%>
 <%@page import="modelo.Serie"%>
 <%@page import="dao.SerieDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 
 <%
-    String id = request.getParameter("id");
-    CategoriaDAO dao = new CategoriaDAO();
-    Categoria obj = dao.buscarPorChavePrimaria(Integer.parseInt(id));
+     String id = request.getParameter("id");
+     
+    SerieDAO dao = new SerieDAO();
+    Serie s = dao.buscarPorChavePrimaria(Integer.parseInt(id));
+    CategoriaDAO cDAO = new CategoriaDAO();
+    Categoria obj = cDAO.buscarPorChavePrimaria(Integer.parseInt(id));
+    List<Categoria> cLista = cDAO.listar();
 %>
 
 
@@ -20,59 +27,67 @@
                 -->
                                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="Long" disabled required  name="txtSerie" />
-                        <label class="mdl-textfield__label" for="txtSerie">ID - Fornecido pelo sistema</label>
+                        <input class="mdl-textfield__input" type="text" readonly  name="id" value="<%=s.getSerie()%>"/>
+                        <label class="mdl-textfield__label" for="id">ID - Fornecido pelo sistema</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtNome" />
+                        <input class="mdl-textfield__input" type="text" name="txtNome" value="<%=s.getNome()%>"/>
                         <label class="mdl-textfield__label" for="txtNome">Nome</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtDescricao" />
+                        <input class="mdl-textfield__input" type="text"  name="txtDescricao" value="<%=s.getDescricao()%>"/>
                         <label class="mdl-textfield__label" for="txtDescricao">Descricao</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtTemporada" />
-                        <label class="mdl-textfield__label" for="txtTemporada">Temporadas</label>
+                        <input class="mdl-textfield__input" type="text"  name="txtTemporada" value="<%=s.getTemporada()%>"/>
+                        <label class="mdl-textfield__label" for="txtTemporada">Temporada</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="character" required  name="txtNota" />
+                        <input class="mdl-textfield__input"    name="txtNota" value="<%=s.getNota()%>"/>
                         <label class="mdl-textfield__label" for="txtNota">Nota</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtTempo" />
+                        <input class="mdl-textfield__input" type="text"  name="txtTempo" value="<%=s.getTempo()%>"/>
                         <label class="mdl-textfield__label" for="txtTempo">Tempo</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtEpisodio" />
+                        <input class="mdl-textfield__input" type="text"  name="txtEpisodio" value="<%=s.getEpisodio()%>"/>
                         <label class="mdl-textfield__label" for="txtEpisodio">Episodio</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtYoutube" />
+                        <input class="mdl-textfield__input" type="text"  name="txtYoutube" value="<%=s.getYoutube()%>"/>
                         <label class="mdl-textfield__label" for="txtYoutube">Youtube</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtImdb" />
-                        <label class="mdl-textfield__label" for="txtImdb">IMDB</label>
+                        <input class="mdl-textfield__input" type="text"   name="txtImdb" value="<%=s.getImdb()%>"/>
+                        <label class="mdl-textfield__label" for="txtImdb">Imdb</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col">
+                    <select class="mdl-select__input" id="professsion" name="selCategoria">
+                            <%                            
+                    for (Categoria c : cLista) {
+                %>
+                             <option value="<%=c.getCategoria()%>"><%=c%></option> 
+               <%} %>   
+               
+                 </select>
 
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
                         <i class="material-icons">save</i></button>

@@ -23,8 +23,6 @@ public class CategoriaDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            //em.close();
             
         }
         
@@ -43,8 +41,7 @@ public class CategoriaDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            // em.close();
+       
         }
     }
     
@@ -56,11 +53,10 @@ public class CategoriaDAO {
             em.getTransaction().commit();
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
-        } finally {
-            //em.close();
+       
         }
     }
-     public Categoria buscarPorChavePrimaria(Long Categoria){
+     public Categoria buscarPorChavePrimaria(Integer Categoria){
         return em.find(Categoria.class, Categoria);
     
 }

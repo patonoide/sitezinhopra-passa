@@ -2,9 +2,9 @@
 <%@page import="dao.CategoriaDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-    String categoria = request.getParameter("categoria");
+    String categoria = request.getParameter("id");
     CategoriaDAO dao = new CategoriaDAO();
-    Categoria obj = dao.buscarPorChavePrimaria(Long.parseLong(categoria));
+    Categoria obj = dao.buscarPorChavePrimaria(Integer.parseInt(categoria));
     dao.excluir(obj);
 %>
 

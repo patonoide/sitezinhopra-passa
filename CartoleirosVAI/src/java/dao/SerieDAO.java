@@ -27,10 +27,7 @@ public class SerieDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            //em.close();
-            
-        }
+        } 
         
     }
 
@@ -47,9 +44,7 @@ public class SerieDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
             throw e;
-        } finally {
-            // em.close();
-        }
+        } 
     }
     
     public void excluir(Serie obj) throws Exception {
@@ -60,11 +55,9 @@ public class SerieDAO {
             em.getTransaction().commit();
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
-        } finally {
-            //em.close();
         }
     }
-     public Serie buscarPorChavePrimaria(Long serie){
+     public Serie buscarPorChavePrimaria(Integer serie){
         return em.find(Serie.class, serie);
     
 }

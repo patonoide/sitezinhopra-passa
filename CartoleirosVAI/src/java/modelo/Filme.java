@@ -6,10 +6,12 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,19 +23,19 @@ import javax.persistence.Table;
 
 /**
  *
- * @author vinic
+ * @author paton
  */
 @Entity
 @Table(name = "filme")
 @NamedQueries({
     @NamedQuery(name = "Filme.findAll", query = "SELECT f FROM Filme f")})
 public class Filme implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "filme")
-    private Long filme;
+    private Integer filme;
     @Basic(optional = false)
     @Column(name = "descricao")
     private String descricao;
@@ -56,7 +58,7 @@ public class Filme implements Serializable {
         @JoinColumn(name = "filme", referencedColumnName = "filme")}, inverseJoinColumns = {
         @JoinColumn(name = "usuario", referencedColumnName = "usuario")})
     @ManyToMany
-    private List<Usuario> usuarioList;
+    private Collection<Usuario> usuarioCollection;
     @JoinColumn(name = "categoria", referencedColumnName = "categoria")
     @ManyToOne(optional = false)
     private Categoria categoria;
@@ -64,11 +66,11 @@ public class Filme implements Serializable {
     public Filme() {
     }
 
-    public Filme(Long filme) {
+    public Filme(Integer filme) {
         this.filme = filme;
     }
 
-    public Filme(Long filme, String descricao, Character nota, String tempo, String youtube, String nome, String imdb) {
+    public Filme(Integer filme, String descricao, Character nota, String tempo, String youtube, String nome, String imdb) {
         this.filme = filme;
         this.descricao = descricao;
         this.nota = nota;
@@ -78,11 +80,11 @@ public class Filme implements Serializable {
         this.imdb = imdb;
     }
 
-    public Long getFilme() {
+    public Integer getFilme() {
         return filme;
     }
 
-    public void setFilme(Long filme) {
+    public void setFilme(Integer filme) {
         this.filme = filme;
     }
 
@@ -134,12 +136,12 @@ public class Filme implements Serializable {
         this.imdb = imdb;
     }
 
-    public List<Usuario> getUsuarioList() {
-        return usuarioList;
+    public Collection<Usuario> getUsuarioCollection() {
+        return usuarioCollection;
     }
 
-    public void setUsuarioList(List<Usuario> usuarioList) {
-        this.usuarioList = usuarioList;
+    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
+        this.usuarioCollection = usuarioCollection;
     }
 
     public Categoria getCategoria() {

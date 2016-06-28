@@ -2,9 +2,9 @@
 <%@page import="dao.FilmeDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-    String filme = request.getParameter("filme");
+    String filme = request.getParameter("id");
     FilmeDAO dao = new FilmeDAO();
-    Filme obj = dao.buscarPorChavePrimaria(Long.parseLong(filme));
+    Filme obj = dao.buscarPorChavePrimaria(Integer.parseInt(filme));
     dao.excluir(obj);
 %>
 

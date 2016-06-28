@@ -1,10 +1,12 @@
+<%@page import="modelo.Categoria"%>
+<%@page import="dao.CategoriaDAO"%>
 <%@page import="modelo.Serie"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.SerieDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
 <%
-SerieDAO cDAO = new SerieDAO();
-    List<Serie> cLista = cDAO.listar();
+    CategoriaDAO cDAO = new CategoriaDAO();
+    List<Categoria> cLista = cDAO.listar();
     %>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -17,7 +19,7 @@ SerieDAO cDAO = new SerieDAO();
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="Long" disabled required  name="txtSerie" />
+                        <input class="mdl-textfield__input"  disabled required  name="txtSerie" />
                         <label class="mdl-textfield__label" for="txtSerie">ID - Fornecido pelo sistema</label>
                     </div>
                 </div>
@@ -41,7 +43,7 @@ SerieDAO cDAO = new SerieDAO();
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="character" required  name="txtNota" />
+                        <input class="mdl-textfield__input"  required  name="txtNota" />
                         <label class="mdl-textfield__label" for="txtNota">Nota</label>
                     </div>
                 </div>
@@ -54,7 +56,7 @@ SerieDAO cDAO = new SerieDAO();
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" required  name="txtEpisodio" />
-                        <label class="mdl-textfield__label" for="txtEpisodio">Episodio</label>
+                        <label class="mdl-textfield__label" for="txtEpisodio">Episodios</label>
                     </div>
                 </div>
                 <div class="mdl-cell--12-col"> 
@@ -71,7 +73,7 @@ SerieDAO cDAO = new SerieDAO();
                 </div>
                  <select class="mdl-select__input" id="professsion" name="selCategoria">
                           <%                            
-                    for (Serie c : cLista) {
+                    for (Categoria c : cLista) {
                 %>
                              <option value="<%=c.getCategoria()%>"><%=c%></option> 
                <%} %>   

@@ -18,10 +18,10 @@
         String tempo= request.getParameter("txtTempo");
         String temporada = request.getParameter("txtTemporada");
         String episodio =request.getParameter("txtEpisodio");
-        String cat=request.getParameter("txtCategoria");
+        String cat=request.getParameter("selCategoria");
         SerieDAO dao = new SerieDAO();
          Categoria Ocategoria = new Categoria();
-        Ocategoria.setCategoria(Long.parseLong(cat));
+        Ocategoria.setCategoria(Integer.parseInt(cat));
         
        Serie obj = new Serie();
         obj.setCategoria(Ocategoria);

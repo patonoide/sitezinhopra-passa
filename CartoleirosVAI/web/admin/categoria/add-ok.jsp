@@ -8,14 +8,14 @@
         response.sendRedirect("add.jsp");
     }
     else{
-        //String id = request.getParameter("txtId");
+        
         String nome = request.getParameter("txtNome");
         
         CategoriaDAO dao = new CategoriaDAO();
         
         Categoria obj = new Categoria();
-        //obj.setId(Integer.parseInt(id));
         obj.setNome(nome);
+        dao.incluir(obj);
         
         try{
             dao.incluir(obj);

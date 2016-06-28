@@ -6,10 +6,12 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
@@ -18,19 +20,19 @@ import javax.persistence.Table;
 
 /**
  *
- * @author vinic
+ * @author paton
  */
 @Entity
 @Table(name = "usuario")
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")})
 public class Usuario implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "usuario")
-    private Long usuario;
+    private Integer usuario;
     @Basic(optional = false)
     @Column(name = "senha")
     private String senha;
@@ -43,19 +45,19 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "login")
     private String login;
-    @ManyToMany(mappedBy = "usuarioList")
-    private List<Serie> serieList;
-    @ManyToMany(mappedBy = "usuarioList")
-    private List<Filme> filmeList;
+    @ManyToMany(mappedBy = "usuarioCollection")
+    private Collection<Serie> serieCollection;
+    @ManyToMany(mappedBy = "usuarioCollection")
+    private Collection<Filme> filmeCollection;
 
     public Usuario() {
     }
 
-    public Usuario(Long usuario) {
+    public Usuario(Integer usuario) {
         this.usuario = usuario;
     }
 
-    public Usuario(Long usuario, String senha, String email, String foto, String login) {
+    public Usuario(Integer usuario, String senha, String email, String foto, String login) {
         this.usuario = usuario;
         this.senha = senha;
         this.email = email;
@@ -63,11 +65,11 @@ public class Usuario implements Serializable {
         this.login = login;
     }
 
-    public Long getUsuario() {
+    public Integer getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Long usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
 
@@ -103,20 +105,20 @@ public class Usuario implements Serializable {
         this.login = login;
     }
 
-    public List<Serie> getSerieList() {
-        return serieList;
+    public Collection<Serie> getSerieCollection() {
+        return serieCollection;
     }
 
-    public void setSerieList(List<Serie> serieList) {
-        this.serieList = serieList;
+    public void setSerieCollection(Collection<Serie> serieCollection) {
+        this.serieCollection = serieCollection;
     }
 
-    public List<Filme> getFilmeList() {
-        return filmeList;
+    public Collection<Filme> getFilmeCollection() {
+        return filmeCollection;
     }
 
-    public void setFilmeList(List<Filme> filmeList) {
-        this.filmeList = filmeList;
+    public void setFilmeCollection(Collection<Filme> filmeCollection) {
+        this.filmeCollection = filmeCollection;
     }
 
     @Override

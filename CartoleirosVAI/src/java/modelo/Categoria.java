@@ -6,11 +6,13 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -19,44 +21,44 @@ import javax.persistence.Table;
 
 /**
  *
- * @author vinic
+ * @author paton
  */
 @Entity
 @Table(name = "categoria")
 @NamedQueries({
     @NamedQuery(name = "Categoria.findAll", query = "SELECT c FROM Categoria c")})
 public class Categoria implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "categoria")
-    private Long categoria;
+    private Integer categoria;
     @Basic(optional = false)
     @Column(name = "nome")
     private String nome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
-    private List<Serie> serieList;
+    private Collection<Serie> serieCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
-    private List<Filme> filmeList;
+    private Collection<Filme> filmeCollection;
 
     public Categoria() {
     }
 
-    public Categoria(Long categoria) {
+    public Categoria(Integer categoria) {
         this.categoria = categoria;
     }
 
-    public Categoria(Long categoria, String nome) {
+    public Categoria(Integer categoria, String nome) {
         this.categoria = categoria;
         this.nome = nome;
     }
 
-    public Long getCategoria() {
+    public Integer getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Long categoria) {
+    public void setCategoria(Integer categoria) {
         this.categoria = categoria;
     }
 
@@ -68,20 +70,20 @@ public class Categoria implements Serializable {
         this.nome = nome;
     }
 
-    public List<Serie> getSerieList() {
-        return serieList;
+    public Collection<Serie> getSerieCollection() {
+        return serieCollection;
     }
 
-    public void setSerieList(List<Serie> serieList) {
-        this.serieList = serieList;
+    public void setSerieCollection(Collection<Serie> serieCollection) {
+        this.serieCollection = serieCollection;
     }
 
-    public List<Filme> getFilmeList() {
-        return filmeList;
+    public Collection<Filme> getFilmeCollection() {
+        return filmeCollection;
     }
 
-    public void setFilmeList(List<Filme> filmeList) {
-        this.filmeList = filmeList;
+    public void setFilmeCollection(Collection<Filme> filmeCollection) {
+        this.filmeCollection = filmeCollection;
     }
 
     @Override
@@ -106,7 +108,7 @@ public class Categoria implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Categoria[ categoria=" + categoria + " ]";
+        return + categoria + " "+this.getNome();
     }
     
 }

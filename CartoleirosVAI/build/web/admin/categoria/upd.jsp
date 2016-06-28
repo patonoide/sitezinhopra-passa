@@ -3,9 +3,9 @@
 <%@include file="../cabecalho-admin.jsp"%>
 
 <%
-    String Categoria = request.getParameter("Categoria");
+    String Categoria = request.getParameter("id");
     CategoriaDAO dao = new CategoriaDAO();
-    Categoria obj = dao.buscarPorChavePrimaria(Long.parseLong(Categoria));
+    Categoria obj = dao.buscarPorChavePrimaria(Integer.parseInt(Categoria));
 %>
 
 
@@ -18,11 +18,7 @@
                     primeira div -- área que ocupará o campo de formulário
                     segunda div -- campo de texto e label 
                 -->
-                <div class="mdl-cell--12-col"> 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" value="<%=obj.getCategoria()%>" type="Long" readonly="readonly" required  name="Categoria"  />
-                        <label class="mdl-textfield__label" for="id">ID</label>
-                    </div>
+                 <input type="hidden" name="txtId" value="<%=Categoria%>" />
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
