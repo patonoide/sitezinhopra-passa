@@ -6,7 +6,7 @@
 
         <div class="mdl-card__supporting-text">
 
-            <form action="index.jsp" method="post">
+            <form action="/site/index.jsp" method="post">
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" name="txtLogin" required  id="txtLogin" />
