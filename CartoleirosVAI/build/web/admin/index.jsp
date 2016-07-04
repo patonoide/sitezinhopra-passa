@@ -1,4 +1,4 @@
-<%@include file="cabecalho-admin.jsp"%>
+<%@include file="cabecalho.jsp"%>
 
 <%
     
@@ -54,7 +54,7 @@
   </div>
 
 
-<<<<<<< HEAD
+
             
             </br>
             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
@@ -65,13 +65,11 @@
     
             </center>
              </form>
-=======
+
           
-                <div class="mdl-cell--12-col">
-                    Este é um site que tu faz os bagulho lá da série e do filme.
-                </div>
+               
           
->>>>>>> origin/master
+
         </div>
 
     </div>
