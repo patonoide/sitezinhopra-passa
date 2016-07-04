@@ -41,14 +41,12 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
           <h3>Área Administrativa</h3>
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <p>Admin - <a href="../index.jsp?sair=ok">Sair</a></p>
-        </div>
+        
         <div class=" mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="../categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
-          <a href="../filme/list.jsp" class="mdl-layout__tab">Filme</a>
-          <a href="../serie/list.jsp" class="mdl-layout__tab">Serie</a>
-          <a href="../usuario/list.jsp" class="mdl-layout__tab">Usuario</a>
+          <a href="categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
+          <a href="filme/list.jsp" class="mdl-layout__tab">Filme</a>
+          <a href="serie/list.jsp" class="mdl-layout__tab">Serie</a>
+          <a href="usuario/list.jsp" class="mdl-layout__tab">Usuario</a>
           
         </div>
       </header>
