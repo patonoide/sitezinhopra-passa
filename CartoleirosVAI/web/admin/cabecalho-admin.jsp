@@ -3,7 +3,7 @@
         <%
         if(session.getAttribute("usuarioAdmin")==null)
 {
-    response.sendRedirect("../../login-admin.jsp");
+    response.sendRedirect("../../../login.jsp");
     
 }%>
         <meta charset="utf-8">
