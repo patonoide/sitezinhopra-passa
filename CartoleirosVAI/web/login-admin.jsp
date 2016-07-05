@@ -38,7 +38,7 @@
 
         <div class="mdl-card__supporting-text">
 
-            <form action="admin/index.jsp" method="post">
+            <form action="login-admin.jsp" method="post">
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" name="txtLogin" required  id="txtLogin" />
