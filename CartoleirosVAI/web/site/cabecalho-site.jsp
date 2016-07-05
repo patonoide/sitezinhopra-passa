@@ -38,6 +38,9 @@
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout__header-row">
         </div>
+          <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <p>Usuario - <a href="../index.jsp?sair=ok">Sair</a></p>
+        </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
           <h3>Site</h3>
         </div>
