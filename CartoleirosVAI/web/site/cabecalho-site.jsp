@@ -28,8 +28,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
-        <link rel="stylesheet" href="../../mdl/material.min.css">
-        <link rel="stylesheet" href="../../mdl/styles.css">
+        <link rel="stylesheet" href="../mdl/material.min.css">
+        <link rel="stylesheet" href="../mdl/styles.css">
        
     </head>
     
@@ -39,20 +39,10 @@
         <div class="mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Área Administrativa</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <p>Admin - <a href="../index.jsp?sair=ok">Sair</a></p>
-        </div>
-        <div class=" mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="../categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
-          <a href="../filme/list.jsp" class="mdl-layout__tab">Filme</a>
-          <a href="../serie/list.jsp" class="mdl-layout__tab">Serie</a>
-          <a href="../usuario/list.jsp" class="mdl-layout__tab">Usuario</a>
-          
+          <h3>Site</h3>
         </div>
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
-<script src="../../mdl/material.min.js"></script>
-<script src="../../mdl/jquery-2.1.4.min.js"></script>
+<script src="../mdl/material.min.js"></script>
+<script src="../mdl/jquery-2.1.4.min.js"></script>

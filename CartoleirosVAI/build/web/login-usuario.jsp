@@ -77,6 +77,10 @@
                 <input type="text" name="txtCadastrarEmail"
                        /><br/>
                 <input type="submit" value="Cadastrar" />
+                <label>Foto:</label>
+                <input type="text" name="txtFoto" />
+                       <br/>
+                
                 
             </form>
         </div>

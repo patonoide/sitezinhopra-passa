@@ -5,16 +5,14 @@
         <div class="mdl-card__supporting-text">
             <center>
                 <h4>Gerenciamento do Sistema</h4>
-
-            
-            </form>
-
-            <div class="mdl-cell--12-col">
-                Este é um site que tu faz os bagulho lá da série e do filme.
-            </div>
-            </center>
+                </br>
+                <center>
+                    </form>          
+                    <div class="mdl-cell--12-col">
+                        Este é um site que tu faz os bagulho lá da série e do filme.
+                    </div>
+                </center>
         </div>
-
     </div>
 </section>
 <script>

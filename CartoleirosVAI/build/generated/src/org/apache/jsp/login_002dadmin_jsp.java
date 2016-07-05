@@ -1,10 +1,10 @@
-package org.apache.jsp.admin;
+package org.apache.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_002dadmin_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -13,8 +13,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/admin/cabecalho.jsp");
-    _jspx_dependants.add("/admin/rodape-admin.jsp");
+    _jspx_dependants.add("/cabecalho-index.jsp");
+    _jspx_dependants.add("/rodape-index.jsp");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -47,6 +47,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("<!doctype html>\r\n");
+      out.write("\r\n");
       out.write("<html lang=\"pt-br\">\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta charset=\"utf-8\">\r\n");
@@ -77,8 +79,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en\" rel=\"stylesheet\">\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"\r\n");
       out.write("              rel=\"stylesheet\">\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"../mdl/material.min.css\">\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"../mdl/styles.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"mdl/material.min.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"mdl/styles.css\">\r\n");
       out.write("       \r\n");
       out.write("    </head>\r\n");
       out.write("    \r\n");
@@ -88,125 +90,99 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"mdl-layout__header-row\">\r\n");
       out.write("        </div>\r\n");
       out.write("        <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\r\n");
-      out.write("          <h3>Área Administrativa</h3>\r\n");
+      out.write("          <h3>Home</h3>\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\r\n");
       out.write("        </div>\r\n");
       out.write("        \r\n");
-      out.write("        <div class=\" mdl-js-ripple-effect mdl-color--primary-dark\">\r\n");
-      out.write("          <a href=\"categoria/list.jsp\" class=\"mdl-layout__tab\">Categoria</a>\r\n");
-      out.write("          <a href=\"filme/list.jsp\" class=\"mdl-layout__tab\">Filme</a>\r\n");
-      out.write("          <a href=\"serie/list.jsp\" class=\"mdl-layout__tab\">Serie</a>\r\n");
-      out.write("          <a href=\"usuario/list.jsp\" class=\"mdl-layout__tab\">Usuario</a>\r\n");
-      out.write("          \r\n");
-      out.write("        </div>\r\n");
       out.write("      </header>\r\n");
       out.write("      <main class=\"mdl-layout__content\">\r\n");
       out.write("        <div class=\"mdl-layout__tab-panel is-active\" id=\"overview\">\r\n");
-      out.write("<script src=\"../mdl/material.min.js\"></script>\r\n");
-      out.write("<script src=\"../mdl/jquery-2.1.4.min.js\"></script>");
+      out.write("<script src=\"mdl/material.min.js\"></script>\r\n");
+      out.write("<script src=\"mdl/jquery-2.1.4.min.js\"></script>");
       out.write("\r\n");
       out.write("\r\n");
 
-    
-    
-    if(request.getParameter("sair")!=null)
-    {
-        session.setAttribute("usuarioAdmin",null);
+    if (request.getParameter("sair") != null) {
+        session.setAttribute("usuarioAdmin", null);
     }
-    
-    if(request.getParameter("txtLogin")!=null && request.getParameter("txtSenha")!=null)
-    {
-     
-    
-    String login = request.getParameter("txtLogin").toString();
-    String senha = request.getParameter("txtSenha").toString();
-    if(login.equals("Admin")&& senha.equals("Admin"))
-    {
-        session.setAttribute("usuarioAdmin", login);
-    }
-    else 
-    {
-        response.sendRedirect("index.jsp");
-    }
-     String mensagem = "";
- 
-        
-        
-     
-        
 
-}
+    if (request.getParameter("txtLogin") != null && request.getParameter("txtSenha") != null) {
+
+        String login = request.getParameter("txtLogin").toString();
+        String senha = request.getParameter("txtSenha").toString();
+        if (login.equals("Admin") && senha.equals("Admin")) {
+            session.setAttribute("usuarioAdmin", login);
+        } else {
+            response.sendRedirect("index.jsp");
+        }
+        String mensagem = "";
+
+    }
 
 
       out.write("\r\n");
       out.write("<section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\r\n");
       out.write("    <div class=\"mdl-card mdl-cell mdl-cell--12-col\">\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"mdl-card__supporting-text\">\r\n");
-      out.write("            <center>\r\n");
-      out.write("            <h4>Gerenciamento do Sistema</h4>\r\n");
-      out.write("            </br>\r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            <center>\r\n");
-      out.write("<form action=\"index.jsp\" method=\"post\">\r\n");
-      out.write("  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\r\n");
-      out.write("    <input class=\"mdl-textfield__input\" type=\"text\" name=\"txtLogin\" id=\"txtLogin\">\r\n");
-      out.write("    <label class=\"mdl-textfield__label\" for=\"txtLogin\">Login</label>\r\n");
-      out.write("  </div>\r\n");
-      out.write("    </br>\r\n");
-      out.write("  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\r\n");
-      out.write("    <input class=\"mdl-textfield__input\" type=\"password\" name=\"txtSenha\" id=\"txtSenha\">\r\n");
-      out.write("    <label class=\"mdl-textfield__label\" for=\"txtSenha\">Senha</label>\r\n");
-      out.write("  </div>\r\n");
       out.write("\r\n");
+      out.write("            <form action=\"admin/index.jsp\" method=\"post\">\r\n");
+      out.write("                <div class=\"mdl-cell--12-col\"> \r\n");
+      out.write("                    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\r\n");
+      out.write("                        <input class=\"mdl-textfield__input\" type=\"text\" name=\"txtLogin\" required  id=\"txtLogin\" />\r\n");
+      out.write("                        <label class=\"mdl-textfield__label\" for=\"txtLogin\">Login</label>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"mdl-cell--12-col\"> \r\n");
+      out.write("                    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\r\n");
+      out.write("                        <input class=\"mdl-textfield__input\" type=\"password\" name=\"txtSenha\" required  id=\"txtSenha\" />\r\n");
+      out.write("                        <label class=\"mdl-textfield__label\" for=\"txtSenha\">Senha</label>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"mdl-cell--12-col\">\r\n");
       out.write("\r\n");
+      out.write("                    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\">\r\n");
+      out.write("                        Entrar\r\n");
+      out.write("                    </button>\r\n");
       out.write("\r\n");
-      out.write("            \r\n");
-      out.write("            </br>\r\n");
-      out.write("            <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored\">\r\n");
-      out.write(" Entrar\r\n");
-      out.write("\r\n");
-      out.write("</button>   \r\n");
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("            </center>\r\n");
-      out.write("             </form>\r\n");
-      out.write("\r\n");
-      out.write("          \r\n");
-      out.write("               \r\n");
-      out.write("          \r\n");
-      out.write("\r\n");
+      out.write("                    <button type=\"reset\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\">\r\n");
+      out.write("                        Limpar\r\n");
+      out.write("                    </button>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </form>\r\n");
       out.write("        </div>\r\n");
-      out.write("\r\n");
       out.write("    </div>\r\n");
-      out.write("</section>\r\n");
-      out.write("<script>\r\n");
-      out.write("</script>\r\n");
       out.write("\r\n");
-      out.write("<section class=\"section--footer mdl-color--white mdl-grid\">\n");
-      out.write("\n");
-      out.write("</section>\n");
-      out.write("</div>\n");
-      out.write("<div class=\"mdl-layout__tab-panel\" id=\"features\">\n");
-      out.write("    <section class=\"section--center mdl-grid mdl-grid--no-spacing\">\n");
-      out.write("\n");
-      out.write("    </section>\n");
-      out.write("</div>\n");
-      out.write("\n");
-      out.write("<footer class=\"mdl-mega-footer\">\n");
-      out.write("    <div class=\"mdl-mega-footer--middle-section\">\n");
-      out.write("        Alonso & Porto Projects\n");
-      out.write("    </div>\n");
-      out.write("</footer>\n");
-      out.write("</main>\n");
-      out.write("</div>\n");
-      out.write("<script src=\"../../mdl/material.min.js\"></script>\n");
-      out.write("<script src=\"../../mdl/jquery-2.1.4.min.js\"></script>\n");
-      out.write("\n");
-      out.write("</body>\n");
-      out.write("</html>\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("</section>\r\n");
+      out.write("\r\n");
+      out.write(" \r\n");
+      out.write("<section class=\"section--footer mdl-color--white mdl-grid\">\r\n");
+      out.write("\r\n");
+      out.write("</section>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"mdl-layout__tab-panel\" id=\"features\">\r\n");
+      out.write("    <section class=\"section--center mdl-grid mdl-grid--no-spacing\">\r\n");
+      out.write("\r\n");
+      out.write("    </section>\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<footer class=\"mdl-mega-footer\">\r\n");
+      out.write("    <div class=\"mdl-mega-footer--middle-section\">\r\n");
+      out.write("        Alonso & Porto Projects\r\n");
+      out.write("    </div>\r\n");
+      out.write("</footer>\r\n");
+      out.write("</main>\r\n");
+      out.write("</div>\r\n");
+      out.write("<script src=\"mdl/material.min.js\"></script>\r\n");
+      out.write("<script src=\"mdl/jquery-2.1.4.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write('\r');
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

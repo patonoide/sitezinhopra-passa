@@ -5,6 +5,7 @@
     String login=request.getParameter("txtCadastrarLogin");
     String senha=request.getParameter("txtCadastrarSenha");
     String email=request.getParameter("txtCadastrarEmail");
+    String foto=request.getParameter("txtFoto");
     //criar meu objeto modelo
     Usuario usuario = new Usuario();
     //Adiciono os valores enviados 
@@ -12,6 +13,7 @@
     usuario.setLogin(login);
     usuario.setSenha(senha);
     usuario.setEmail(email);
+    usuario.setFoto(foto);
     //instanciar minha classe de acesso  a dados
     UsuarioDAO dao= new UsuarioDAO();
     //manda inserir
