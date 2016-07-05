@@ -1,11 +1,5 @@
 <html lang="pt-br">
     <head>
-        <%
-        if(session.getAttribute("usuarioAdmin")==null)
-{
-    response.sendRedirect("../../login-admin.jsp");
-    
-}%>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
