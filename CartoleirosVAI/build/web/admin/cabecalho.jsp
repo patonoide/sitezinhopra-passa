@@ -28,8 +28,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
-        <link rel="stylesheet" href="../mdl/material.min.css">
-        <link rel="stylesheet" href="../mdl/styles.css">
+        <link rel="stylesheet" href="../../mdl/material.min.css">
+        <link rel="stylesheet" href="../../mdl/styles.css">
        
     </head>
     
@@ -52,5 +52,5 @@
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
-<script src="../mdl/material.min.js"></script>
-<script src="../mdl/jquery-2.1.4.min.js"></script>
+<script src="../../mdl/material.min.js"></script>
+<script src="../../mdl/jquery-2.1.4.min.js"></script>
