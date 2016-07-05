@@ -1,34 +1,31 @@
 <%@include file="cabecalho-index.jsp"%>
 
-<% 
-    if(request.getParameter("sair")!=null)
-    {
-        session.setAttribute("usuarioAdmin",null);
+<%
+    if (request.getParameter("sair") != null) {
+        session.setAttribute("usuarioAdmin", null);
     }
-    
-    if(request.getParameter("txtLogin")!=null && request.getParameter("txtSenha")!=null)
-    {
-     
-    
-    String login = request.getParameter("txtLogin").toString();
-    String senha = request.getParameter("txtSenha").toString();
-    if(login.equals("Admin")&& senha.equals("Admin"))
-    {
-        session.setAttribute("usuarioAdmin", login);
+
+    if (request.getParameter("txtLogin") != null && request.getParameter("txtSenha") != null) {
+
+        String login = request.getParameter("txtLogin").toString();
+        String senha = request.getParameter("txtSenha").toString();
+        if (login.equals("Admin") && senha.equals("Admin")) {
+            session.setAttribute("usuarioAdmin", login);
+            response.sendRedirect("admin/index.jsp");
+        } else {
+            response.sendRedirect("index.jsp");
+        }
+        String mensagem = "";
+
     }
-    else 
-    {
-        response.sendRedirect("index.jsp");
-    }
-     String mensagem = "";
-}
+
 %>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
 
         <div class="mdl-card__supporting-text">
 
-            <form action="admin/index.jsp" method="post">
+            <form action="login-admin.jsp" method="post">
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" name="txtLogin" required  id="txtLogin" />
