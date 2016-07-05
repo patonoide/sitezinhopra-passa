@@ -1,6 +1,28 @@
 <%@include file="cabecalho-index.jsp"%>
 
-
+<% 
+    if(request.getParameter("sair")!=null)
+    {
+        session.setAttribute("usuarioAdmin",null);
+    }
+    
+    if(request.getParameter("txtLogin")!=null && request.getParameter("txtSenha")!=null)
+    {
+     
+    
+    String login = request.getParameter("txtLogin").toString();
+    String senha = request.getParameter("txtSenha").toString();
+    if(login.equals("Admin")&& senha.equals("Admin"))
+    {
+        session.setAttribute("usuarioAdmin", login);
+    }
+    else 
+    {
+        response.sendRedirect("index.jsp");
+    }
+     String mensagem = "";
+}
+%>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
 

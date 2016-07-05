@@ -13,7 +13,7 @@
                     </button>
 
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                            onclick="document.location.href='login-admin.jsp'">
+                            onclick="document.location.href='login-usuario.jsp'">
                         Usuário
                     </button>
                 </div>

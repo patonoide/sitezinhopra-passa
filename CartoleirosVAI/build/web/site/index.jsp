@@ -1,17 +1,32 @@
-<%-- 
-    Document   : index
-    Created on : 28/06/2016, 21:12:54
-    Author     : vinic
---%>
+<%@include file="cabecalho-site.jsp"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+
+        <div class="mdl-card__supporting-text">
+
+            <center>
+                <div class="mdl-cell--12-col">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" 
+                            onclick="document.location.href = 'serie.jsp'">
+                        Cadastrar uma série
+                    </button>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                            onclick="document.location.href = 'checar.jsp'">
+                        Checar suas séries e filmes
+                    </button>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                            onclick="document.location.href = 'filme.jsp'">
+                        Cadastrar um filme
+                    </button>
+                </div>
+            </center>
+        </div>
+    </div>
+</section>
+<script>
+</script>
+
+<%@include file="rodape-site.jsp"%>

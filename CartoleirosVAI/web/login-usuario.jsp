@@ -1,3 +1,5 @@
+<%@page import="modelo.Usuario"%>
+<%@page import="dao.UsuarioDAO"%>
 <%@include file="cabecalho-index.jsp"%>
 
 <%
@@ -18,7 +20,7 @@
             //Vou pra tela inicial do jogo
             session.setAttribute("usuario", usuario);
             //Vou para tela de jogo
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("site/index.jsp");
         }
         else
         {
@@ -58,7 +60,7 @@
             <div class="centralizar">
                 <hr/>
                 ou
-                <a href="index.jsp?txtEntrarLogin=anonimo;txtEntrarSenha=anonimo">Entrar Anonimo</a>
+                <a href="site/index.jsp?txtEntrarLogin=anonimo;txtEntrarSenha=anonimo">Entrar Anonimo</a>
                 <hr/>
             </div>
             <h4>Cadastre-se</h4>

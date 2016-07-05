@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.Usuario;
 
 /**
@@ -45,6 +46,20 @@ public class UsuarioDAO {
             em.getTransaction().rollback();
             throw e;
         } 
+    }
+    
+    public Usuario realizarLogin(String login, String senha)
+    {
+        TypedQuery<Usuario> query= em.createNamedQuery("Usuario.realizarLogin",Usuario.class);
+        query.setParameter("login", login);
+        query.setParameter("senha", senha);
+        Usuario usuario;
+        try{
+            usuario = query.getSingleResult();
+        }catch(Exception e){
+            usuario=null;
+        }
+        return usuario;
     }
     
     public void excluir(Usuario obj) throws Exception {

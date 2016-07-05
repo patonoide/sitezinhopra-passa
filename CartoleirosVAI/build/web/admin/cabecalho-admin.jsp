@@ -43,10 +43,10 @@
         </div>
         
         <div class=" mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="../categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
-          <a href="../filme/list.jsp" class="mdl-layout__tab">Filme</a>
-          <a href="../serie/list.jsp" class="mdl-layout__tab">Serie</a>
-          <a href="../usuario/list.jsp" class="mdl-layout__tab">Usuario</a>
+          <a href="categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
+          <a href="filme/list.jsp" class="mdl-layout__tab">Filme</a>
+          <a href="serie/list.jsp" class="mdl-layout__tab">Serie</a>
+          <a href="usuario/list.jsp" class="mdl-layout__tab">Usuario</a>
           
         </div>
       </header>

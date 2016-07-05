@@ -6,7 +6,7 @@
     String senha=request.getParameter("txtCadastrarSenha");
     String email=request.getParameter("txtCadastrarEmail");
     //criar meu objeto modelo
-    Usuario usuario=new Usuario();
+    Usuario usuario = new Usuario();
     //Adiciono os valores enviados 
     //jogador.setNome(nome);
     usuario.setLogin(login);
@@ -26,6 +26,6 @@
     </head>
     <body>
         <h1>Cadastro feito com sucesso</h1>
-        <a href="index.jsp">Voltar</a>
+        <a href="login-usuario.jsp">Voltar</a>
     </body>
 </html>
