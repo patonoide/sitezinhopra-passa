@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vinic/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/admin/categoria/add.jsp</file>
-            <file>file:/C:/Users/vinic/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/login-usuario.jsp</file>
-            <file>file:/C:/Users/vinic/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/admin/categoria/add-ok.jsp</file>
-            <file>file:/C:/Users/vinic/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/site/cabecalho-site.jsp</file>
+            <file>file:/C:/Users/paton/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/admin/usuario/upd-ok.jsp</file>
+            <file>file:/C:/Users/paton/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/admin/usuario/add-ok.jsp</file>
+            <file>file:/C:/Users/paton/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/src/java/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/paton/Documents/GitHub/sitezinhopra-passa/CartoleirosVAI/web/admin/usuario/upd.jsp</file>
         </group>
     </open-files>
 </project-private>

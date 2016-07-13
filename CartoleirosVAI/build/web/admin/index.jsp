@@ -1,4 +1,4 @@
-<%@include file="cabecalho-admin.jsp"%>
+<%@include file="cabecalho.jsp"%>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -9,7 +9,7 @@
                 <center>
                     </form>          
                     <div class="mdl-cell--12-col">
-                        Este é um site que tu faz os bagulho lá da série e do filme.
+                        Área administrativa
                     </div>
                 </center>
         </div>

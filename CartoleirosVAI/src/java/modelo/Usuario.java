@@ -40,9 +40,8 @@ public class Usuario implements Serializable {
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
-    @Column(name = "foto")
-    private String foto;
-    @Basic(optional = false)
+   
+    
     @Column(name = "login")
     private String login;
     @ManyToMany(mappedBy = "usuarioCollection")
@@ -57,11 +56,11 @@ public class Usuario implements Serializable {
         this.usuario = usuario;
     }
 
-    public Usuario(Integer usuario, String senha, String email, String foto, String login) {
+    public Usuario(Integer usuario, String senha, String email, String login) {
         this.usuario = usuario;
         this.senha = senha;
         this.email = email;
-        this.foto = foto;
+        
         this.login = login;
     }
 
@@ -89,14 +88,7 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
+    
     public String getLogin() {
         return login;
     }

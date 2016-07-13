@@ -1,3 +1,4 @@
+
 <%@page import="modelo.Usuario"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@include file="../cabecalho-admin.jsp"%>
@@ -7,27 +8,34 @@
         response.sendRedirect("list.jsp");
         return;
     }
-    
-    String id = request.getParameter("id");
-   
+    String email= request.getParameter("txtEmail");
     String senha = request.getParameter("txtSenha");
-    String login = request.getParameter("txtLogin");
-    String email = request.getParameter("txtEmail");
-    String foto = request.getParameter("txtFoto");
-    UsuarioDAO dao = new UsuarioDAO();
-    Usuario obj = dao.buscarPorChavePrimaria(Integer.parseInt(id));
+    String login=request.getParameter("txtLogin");
+    String id= request.getParameter("id");
     
-    if(obj==null){
+           UsuarioDAO dao = new UsuarioDAO();
+        Usuario obj = dao.buscarPorChavePrimaria(Integer.parseInt(id));
+     
+      
+        obj.setEmail(email);
+        
+        obj.setSenha(senha);
+        obj.setLogin(login);
+        
+        dao.alterar(obj);
+     if(obj==null){
         response.sendRedirect("list.jsp");
         return;
     }
+       
     
-    obj.setLogin(login);
-    obj.setSenha(senha);
-    obj.setFoto(foto);
-    obj.setEmail(email);
     
-    dao.alterar(obj);
+    
+   
+    
+   
+    
+   
 %>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">

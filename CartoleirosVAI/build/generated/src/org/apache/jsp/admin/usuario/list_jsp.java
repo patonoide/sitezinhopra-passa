@@ -98,9 +98,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\r\n");
       out.write("          <h3>Área Administrativa</h3>\r\n");
       out.write("        </div>\r\n");
-      out.write("        <div class=\"mdl-layout--large-screen-only mdl-layout__header-row\">\r\n");
-      out.write("            <p>Admin - <a href=\"../index.jsp?sair=ok\">Sair</a></p>\r\n");
-      out.write("        </div>\r\n");
+      out.write("        \r\n");
       out.write("        <div class=\" mdl-js-ripple-effect mdl-color--primary-dark\">\r\n");
       out.write("          <a href=\"../categoria/list.jsp\" class=\"mdl-layout__tab\">Categoria</a>\r\n");
       out.write("          <a href=\"../filme/list.jsp\" class=\"mdl-layout__tab\">Filme</a>\r\n");
@@ -175,9 +173,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <td>");
       out.print(item.getEmail());
       out.write("</td>\r\n");
-      out.write("                        <td>");
-      out.print(item.getFoto());
-      out.write("</td>\r\n");
+      out.write("                      \r\n");
       out.write("                        <td>\r\n");
       out.write("                            <!-- \r\n");
       out.write("                                Atualizar \r\n");

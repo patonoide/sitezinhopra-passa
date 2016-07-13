@@ -33,13 +33,7 @@
                         <label class="mdl-textfield__label" for="txtEmail">Email</label>
                     </div>
                 </div>
-                <div class="mdl-cell--12-col"> 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtFoto" />
-                        <label class="mdl-textfield__label" for="txtFoto">Foto</label>
-                    </div>
-                </div>
-
+              
                 <div class="mdl-cell--12-col">
 
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">

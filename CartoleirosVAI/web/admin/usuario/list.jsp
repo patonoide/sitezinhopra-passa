@@ -39,8 +39,7 @@
                         <th>Login</th>
                         <th>Senha</th>
                         <th>Email</th>
-                        <th>Foto</th>
-                        
+                                                
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -53,7 +52,7 @@
                         <td><%=item.getLogin()%></td>
                         <td><%=item.getSenha()%></td>
                         <td><%=item.getEmail()%></td>
-                        <td><%=item.getFoto()%></td>
+                      
                         <td>
                             <!-- 
                                 Atualizar 
